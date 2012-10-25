@@ -71,12 +71,12 @@ shopt -s checkwinsize
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+  debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+  xterm-color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -85,23 +85,23 @@ esac
 #force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
+  if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+  # We have color support; assume it's compliant with Ecma-48
+  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+  # a case would tend to support setf rather than setaf.)
+    color_prompt=yes
+  else
+    color_prompt=
+  fi
 fi
 
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ git:\1/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ git:\1/'
 }
 
 command_success() {
-	if [ $? -eq 1 ]
-	then
+  if [ $? -eq 1 ]
+  then
     PS1="${txtblu}[${txtred}\u@\h ${txtpur}\w${txtcyn}\$(parse_git_branch)${txtblu}]${txtrst}\n\$ "
   else
     PS1="${txtblu}[${txtwht}\u@\h ${txtpur}\w${txtcyn}\$(parse_git_branch)${txtblu}]${txtrst}\n\$ "
@@ -130,20 +130,20 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+  . ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
+  . /etc/bash_completion
 fi
 
 case "$TERM" in
 xterm*|rxvt*|linux|screen)
-	PROMPT_COMMAND=command_success
-	;;
+  PROMPT_COMMAND=command_success
+  ;;
 *)
-	;;
+  ;;
 esac
