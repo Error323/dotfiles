@@ -5,15 +5,15 @@
 
 set -e
 
-for f in *
+for file in *
 do
-  if [ $f = 'install.sh' ]
+  if [ $file = 'install.sh' ]
   then
     continue
   fi
 
-  dotfile=.$f
+  dotfile=.$file
 
   rm -vf $HOME/$dotfile
-  ln -vs `pwd`/$f $HOME/$dotfile
+  ln -vs `pwd`/$file $HOME/$dotfile
 done
