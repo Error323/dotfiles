@@ -1,0 +1,23 @@
+# Temporary files #
+###################
+.*.swp
+*~
+*.tmp
+
+# Compiled sources #
+####################
+*.com
+*.class
+*.o
+*.so
+*.pyc
+
+# Packages #
+############
+*.7z
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
