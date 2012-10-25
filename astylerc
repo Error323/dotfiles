@@ -1,1 +1,11 @@
---style=gnu --break-closing-brackets --break-elseifs --delete-empty-lines --break-blocks --convert-tabs --align-pointer=name --suffix=none --formatted --lineend=linux --pad-header
+--style=gnu
+--break-closing-brackets
+--break-elseifs
+--delete-empty-lines
+--break-blocks
+--convert-tabs
+--align-pointer=name
+--suffix=none
+--formatted
+--lineend=linux
+--pad-header
