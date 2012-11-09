@@ -3,39 +3,12 @@
 # for examples
 
 # Colors
-txtblk='\e[0;30m' # Black - Regular
-txtred='\e[0;31m' # Red
-txtgrn='\e[0;32m' # Green
-txtylw='\e[0;33m' # Yellow
-txtblu='\e[0;34m' # Blue
-txtpur='\e[0;35m' # Purple
-txtcyn='\e[0;36m' # Cyan
-txtwht='\e[0;37m' # White
-bldblk='\e[1;30m' # Black - Bold
-bldred='\e[1;31m' # Red
-bldgrn='\e[1;32m' # Green
-bldylw='\e[1;33m' # Yellow
-bldblu='\e[1;34m' # Blue
-bldpur='\e[1;35m' # Purple
-bldcyn='\e[1;36m' # Cyan
-bldwht='\e[1;37m' # White
-unkblk='\e[4;30m' # Black - Underline
-undred='\e[4;31m' # Red
-undgrn='\e[4;32m' # Green
-undylw='\e[4;33m' # Yellow
-undblu='\e[4;34m' # Blue
-undpur='\e[4;35m' # Purple
-undcyn='\e[4;36m' # Cyan
-undwht='\e[4;37m' # White
-bakblk='\e[40m'   # Black - Background
-bakred='\e[41m'   # Red
-badgrn='\e[42m'   # Green
-bakylw='\e[43m'   # Yellow
-bakblu='\e[44m'   # Blue
-bakpur='\e[45m'   # Purple
-bakcyn='\e[46m'   # Cyan
-bakwht='\e[47m'   # White
-txtrst='\e[0m'    # Text Reset
+txtrst=`tput sgr0`
+txtred=`tput setaf 1 && tput bold`
+txtblu=`tput setaf 4`
+txtpur=`tput setaf 5`
+txtcyn=`tput setaf 6`
+txtwht=`tput setaf 7`
 
 # Set default editor
 export VISUAL=vim
@@ -102,9 +75,9 @@ parse_git_branch() {
 command_success() {
   if [ $? -eq 1 ]
   then
-    PS1="${txtblu}[${txtred}\u@\h ${txtpur}\w${txtcyn}\$(parse_git_branch)${txtblu}]${txtrst}\n\$ "
+    PS1="${txtblu}[${txtred}\u@\h ${txtrst}${txtpur}\w${txtcyn}\$(parse_git_branch)${txtblu}]${txtrst}\n\$ "
   else
-    PS1="${txtblu}[${txtwht}\u@\h ${txtpur}\w${txtcyn}\$(parse_git_branch)${txtblu}]${txtrst}\n\$ "
+    PS1="${txtblu}[${txtwht}\u@\h ${txtrst}${txtpur}\w${txtcyn}\$(parse_git_branch)${txtblu}]${txtrst}\n\$ "
   fi
 }
 
