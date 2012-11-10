@@ -25,7 +25,7 @@ set wildmode=longest,list
 colorscheme elflord
 
 " Mappings
-imap ii <esc>
+"imap ii <esc>
 map <C-I> <C-A>
 map <C-D> <C-X>
 map <F9> <ESC>:!setxkbmap dvorak<Return>
