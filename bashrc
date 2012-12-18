@@ -89,6 +89,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias vi='vim'
+alias apaste="curl -F 'paste=<-' http://apaste.info"
 
 # some more ls aliases
 alias ll='ls -lhF'
