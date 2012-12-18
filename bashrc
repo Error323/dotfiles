@@ -18,8 +18,8 @@ export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # Standard C(++) compiler
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
+export CC=/usr/bin/gcc
+export CXX=/usr/bin/g++
 
 # Vi style keybindings
 set -o vi
@@ -88,6 +88,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias vi='vim'
 
 # some more ls aliases
 alias ll='ls -lhF'
@@ -120,3 +121,7 @@ xterm*|rxvt*|linux|screen)
 *)
   ;;
 esac
+
+export HISTTIMEFORMAT="%s "
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \
+               "$(history 1)" >> ~/.bash_eternal_history'
