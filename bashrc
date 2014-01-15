@@ -100,19 +100,20 @@ parse_git_branch() {
 }
 
 command_success() {
-  user=${txtwht}
   if [ $? -eq 1 ]
   then
     user=${txtred}
+  else
+    user=${txtwht}
   fi
 
-  brackets=${txtgrn}
+  host=${txtgrn}
   if [ "$SSH_CONNECTION" = "" ]
   then
-    brackets=${txtblu}
+    host=${txtwht}
   fi
   
-  PS1="${brackets}[${user}\u@\h ${txtrst}${txtpur}\w${txtcyn}\$(parse_git_branch)${brackets}]${txtrst}\n\$ "
+  PS1="${txtblu}[${user}\u${txtblu}@${host}\h ${txtrst}${txtpur}\w${txtcyn}\$(parse_git_branch)${txtblu}]${txtrst}\n\$ "
 }
 
 unset color_prompt force_color_prompt
