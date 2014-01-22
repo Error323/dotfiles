@@ -20,6 +20,7 @@ set hlsearch
 
 " Tab completion stuff
 set wildmode=longest,list
+set pastetoggle=<F2>
 
 " Color scheme
 colorscheme elflord
@@ -28,11 +29,8 @@ colorscheme elflord
 "imap ii <esc>
 map <C-I> <C-A>
 map <C-D> <C-X>
-map <F9> <ESC>:!setxkbmap dvorak<Return>
-map <F8> <ESC>gg
-map <F10> <ESC>:!setxkbmap us<Return>
-map <F11> <Esc>:set paste<Return>
-map <F12> <Esc>:set nopaste<Return>
+nmap \l :setlocal number!<CR>
+nmap \o :set paste!<CR>
 vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
 
 " File detection

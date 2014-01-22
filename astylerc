@@ -1,4 +1,3 @@
---recursive
 --style=allman
 --indent-col1-comments
 --indent-cases

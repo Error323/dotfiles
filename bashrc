@@ -14,8 +14,8 @@ txtwht=`tput setaf 7`
 export VISUAL=vim
 
 # Enable cuda
-export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-5.5/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/lib:$LD_LIBRARY_PATH
 
 # Standard C(++) compiler
 export CC=/usr/bin/gcc
