@@ -33,6 +33,10 @@ nmap \l :setlocal number!<CR>
 nmap \o :set paste!<CR>
 vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
 
+" Clang format functions
+map <C-K> :pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>
+imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
+
 " File detection
 au BufRead,BufNewFile *.py set filetype=python"
 au BufRead,BufNewFile *.tex set filetype=tex"
