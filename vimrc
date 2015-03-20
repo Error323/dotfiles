@@ -1,3 +1,8 @@
+call pathogen#infect()
+filetype off
+syntax on
+filetype plugin indent on
+
 " Settings
 set nu
 set smartindent
@@ -41,13 +46,15 @@ imap <C-K> <ESC>:pyf /usr/share/vim/addons/syntax/clang-format-3.5.py<CR>i
 au BufRead,BufNewFile *.py set filetype=python"
 au BufRead,BufNewFile *.tex set filetype=tex"
 au BufRead,BufNewFile *.Domain set filetype=Domain"
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+au BufRead,BufNewFile *.cuh set filetype=cuda
 
 " Save foldingstates
 " au BufWinLeave * mkview
 " au BufWinEnter * silent loadview
 
 " LaTeX-suite settings
-filetype plugin on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 
